@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(20px);
+}
+
+.task-list {
+    scrollbar-width: thin;
+    scrollbar-color: #8b5cf6 #1e2937;
+}
+
+.task-list::-webkit-scrollbar {
+    width: 6px;
+}
+.task-list::-webkit-scrollbar-thumb {
+    background: #8b5cf6;
+    border-radius: 20px;
+}
+
+.task-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.completed {
+    animation: completeAnim 0.4s ease forwards;
+}
+
+@keyframes completeAnim {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.priority-pill {
+    transition: all 0.2s ease;
+}
+
+.priority-pill.active {
+    background-color: rgba(255,255,255,0.15) !important;
+    transform: scale(1.05);
+}
